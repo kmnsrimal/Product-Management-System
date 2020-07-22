@@ -2,21 +2,18 @@
 .navbar-header{
 	
 	background-color: #8ae234;
-	hight:50;
 }
 
-ul {
+.ul {
   list-style-type: none;
   margin: 0;
-  padding: 10px;
-  
+  padding: 0;
 }
 
 .navbar navbar-default{
 	list-style-type: none;
   margin: 0;
   padding: 0;
-  hight:50;
 }
 
 .container-fluid{
@@ -25,7 +22,6 @@ ul {
   padding: 0;
 }
 
-li{
+.li{
 	display: inline;
-	
 }
