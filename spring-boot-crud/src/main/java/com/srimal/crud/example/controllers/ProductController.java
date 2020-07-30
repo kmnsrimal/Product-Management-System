@@ -2,6 +2,9 @@ package com.srimal.crud.example.controllers;
 
 import com.srimal.crud.example.entities.Product;
 import com.srimal.crud.example.services.ProductService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,11 +31,19 @@ public class ProductController {
      * @param model
      * @return
      */
-    @RequestMapping(value = "/products", method = RequestMethod.GET)
-    public String list(Model model) {
-        model.addAttribute("products", productService.listAllProducts());
-        System.out.println("Returning rpoducts:");
-        return "productform";
+//    @RequestMapping(value = "/products", method = RequestMethod.GET)
+//    public String list(Model model) {
+//        model.addAttribute("products", productService.listAllProducts());
+//        System.out.println("Returning rpoducts:");
+//        return "products";
+//    }
+    
+    @RequestMapping("/products")
+    public String viewHomePage(Model model) {
+        List<Product> listProducts = productService.listAll();
+        model.addAttribute("listProducts", listProducts);
+         
+        return "products";
     }
 
     /**
@@ -76,7 +87,8 @@ public class ProductController {
     @RequestMapping(value = "product", method = RequestMethod.POST)
     public String saveProduct(Product product) {
         productService.saveProduct(product);
-        return "redirect:/product/" + product.getId();
+        return "redirect:/"	+ "product/" ;
+//        + product.getId();
     }
 
     /**

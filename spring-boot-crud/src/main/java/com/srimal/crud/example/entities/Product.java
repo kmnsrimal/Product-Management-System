@@ -29,46 +29,54 @@ public class Product {
 	private String name;
 	private int quentity;
 	private double price;
+	
+	
+	
 	public Integer getId() {
 		// TODO Auto-generated method stub
 		System.out.println(id);
 		return id;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
-		System.out.println(id);
-	}
-	public String getName() {
-		// TODO Auto-generated method stub
-		System.out.println(name);
+public String getName() {
 		return name;
 	}
-	public void setName(String name){
-		// TODO Auto-generated method stub
+
+
+
+	public void setName(String name) {
+		System.out.println("name"+name);
 		this.name = name;
-		System.out.println(name);
 	}
+
+
+
 	public int getQuentity() {
-		// TODO Auto-generated method stub
-		System.out.println(quentity);
 		return quentity;
 	}
-	public void setQuantity(int quentity) {
-		// TODO Auto-generated method stub
+
+
+
+	public void setQuentity(int quentity) {
+		System.out.println("quentity"+quentity);
 		this.quentity = quentity;
-		System.out.println(quentity);
 	}
-	public Double getPrice() {
-		// TODO Auto-generated method stub
-		System.out.println(price);
+
+
+
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(Double price) {
-		// TODO Auto-generated method stub
+
+
+
+	public void setPrice(double price) {
+		System.out.println("price"+price);
 		this.price = price;
-		System.out.println(price);
 	}
+
+
+
 	public void addAttribute(String string, List<Product> listProducts) {
 		// TODO Auto-generated method stub
 		

@@ -21,6 +21,7 @@ public class ProductService {
 	
 	public Product saveProduct(Product product) {
 		logger.error("save product in product service");
+		
 	return 	repository.save(product);
 	
 	}
@@ -48,9 +49,9 @@ public class ProductService {
 	
 	public Product updateProduct(Product product) {
 		Product existingProduct=repository.findById(product.getId()).orElse(null);
-		existingProduct.setName(product.getName());
-		existingProduct.setQuantity(product.getQuentity());
-		existingProduct.setPrice(product.getPrice());
+//		existingProduct.setName(product.getName());
+//		existingProduct.setQuantity(product.getQuentity());
+//		existingProduct.setPrice(product.getPrice());
 		return repository.save(existingProduct);
 		
 	}
@@ -60,8 +61,8 @@ public class ProductService {
 //		}
 
 	public List<Product> listAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findAll();
+		
 	}
 
 	public Object listAllProducts() {
