@@ -4,6 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
     <link href="../../static/style.css" th:href="@{style.css}" rel="stylesheet" media="screen"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     <title>Spring Boot Example</title>
 <style>
@@ -62,16 +67,19 @@ li{
 <form action="#" th:action="@{/product}" th:object="${product}"
             method="post">
  
-  
-  <label for="name"> name:</label>
-  <input type="text" id="name" name="name"><br><br>
-  
-  <label for="quentity"> quantity:</label>
-  <input type="text" id="quentity" name="quentity"><br><br>
-  
-  <label for="price"> price:</label>
-  <input type="text" id="price" name="price"><br><br>
-  <input type="submit" value="Submit">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="name" class="form-control" id="name"  placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label for="quentity">Quentity</label>
+    <input type="quentity" class="form-control" id="quentity" placeholder="quentity">
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="price" class="form-control" id="price" placeholder="price">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
 </div> 
