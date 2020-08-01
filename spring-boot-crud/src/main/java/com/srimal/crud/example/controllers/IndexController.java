@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
       
 	@RequestMapping("/")
-	String index() {
-		return "index";
+	String login() {
+		return "login";
 	}
+	
+//	@RequestMapping("/home")
+//	String index() {
+//		return "index";
+//	}
 }
 
