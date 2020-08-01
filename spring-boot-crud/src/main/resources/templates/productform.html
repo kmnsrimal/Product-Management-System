@@ -1,52 +1,21 @@
+
+
+        
+
+
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
-    <link href="../../static/style.css" th:href="@{style.css}" rel="stylesheet" media="screen"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    <title>Spring Boot Example</title>
-<style>
-.navbar-header{
-	
-	background-color: #8ae234;
-	hight:80;
-}
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 10px;
-  
-}
-
-.navbar navbar-default{
-	list-style-type: none;
-  margin: 0;
-  padding: 0;
-  hight:50;
-}
-
-.container-fluid{
-	list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li{
-	display: inline;
-	
-}
-</style>
+<head>
+<title>WebEncyclop - Login</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div class="container">
-<nav class="navbar navbar-default">
+
+<body style="background-color:#ededed;">
+	<div style="background-color:#337ab7;height:50px;">
+	<nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
                     
@@ -60,29 +29,30 @@ li{
                 </div>
             </div>
         </nav>
-         <div align="center">
-          <h1>New Product</h1>
-  <div class = "form">
-
-<form action="#" th:action="@{/product}" th:object="${product}"
+	</div>
+	<div class="container-fluid">
+		<div class="row col-lg-4 col-lg-offset-4" style="margin-top: 80px;background-color:#fff;padding:20px;border:solid 1px #ddd;">
+			<!-- <img th:src="@{/images/login.jpg}" class="img-responsive center-block" width="300" height="300" alt="Logo" /> -->
+			<form action="#" th:action="@{/product}" th:object="${product}"
             method="post">
- 
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input type="name" class="form-control" id="name"  placeholder="Enter name">
-  </div>
-  <div class="form-group">
-    <label for="quentity">Quentity</label>
-    <input type="quentity" class="form-control" id="quentity" placeholder="quentity">
-  </div>
-  <div class="form-group">
-    <label for="price">Price</label>
-    <input type="price" class="form-control" id="price" placeholder="price">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
-</div> 
-</div>
+				<h3 class="form-signin-heading" th:text="New"></h3>
+				<br /> 
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" th:placeholder="name" class="form-control" /> <br />
+				
+				<label for="quentity">Quentity</label>
+				 <input type="text" th:placeholder="quentity" id="quentity" name="quentity" class="form-control" /> <br />
+				 
+                  <label for="price">Price</label>
+                   <input type="text" th:placeholder="price" id="price" name="price" class="form-control" /> <br />
+                  
+				<div align="center" th:if="${param.error}">
+					<p style="font-size: 20; color: #FF1C19;">Email or Password is invalid.</p>
+				</div>
+				<button class="btn btn-lg btn-primary" name="Submit" value="Login" type="Submit" th:text="Login" style="margin-right:10px;"></button>
+				<a href="/recover-password">Forgot password?</a>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
